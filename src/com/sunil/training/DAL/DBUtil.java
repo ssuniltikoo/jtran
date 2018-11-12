@@ -13,7 +13,7 @@ public class DBUtil {
     private static Connection con;
     private static final String url="Jdbc:mysql://localhost:3306/inventory";//"Jdbc:mysql://localhost:3306/world"
     private static final String userName = "root";
-    private static final String password = "stgit@404";
+    private static final String password = "";
 
     private DBUtil(){}
 
