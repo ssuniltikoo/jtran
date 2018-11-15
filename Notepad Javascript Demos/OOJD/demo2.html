@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>OOJD DEMO1</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        function CreateEmployee(empid,empName, empSalary,empDept){
+                this.empid=empid;
+                this.empName=empName;
+                this.empSalary=empSalary;
+                this.empDept=empDept;
+                this.totalSalary;
+                this.getTakeHomeSalary = function(){
+                    this.totalSalary = this.empSalary - (this.empSalary*0.12);
+                    console.log("Employee Take Salalry"+this.totalSalary);
+                }
+        }
+        
+        var empone = new CreateEmployee(1001,"sunil",200.12,'Java');
+
+        console.log("Employee id is"+empid);
+        console.log(empone.getTakeHomeSalary());
+
+    </script>
+</body>
+
+</html>

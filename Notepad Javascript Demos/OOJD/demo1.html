@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>OOJD DEMO1</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var emp = {
+            emppId:1001,
+            empName:"Sunil",
+            empDept:"IT",
+            isAdmin:false,
+            emp:456.34,
+            address:{
+                street:"Near Nitin company",
+                city:"Thane",
+                pincode:41017
+            }                    
+        };
+             
+        (function add (a,b){
+            console.log("hello from self invoking");
+        })();     
+        console.log(emp.getEData);
+        console.log(emp["empId"]);        
+        console.log(emp.address.pincode);
+        console.log(emp["address"]["city"]);
+    </script>
+</body>
+
+</html>

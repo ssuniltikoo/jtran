@@ -1,0 +1,308 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    
+    body{
+        background-color:dimgrey;
+            }
+    .main-table{
+        width: 800px;
+        height:800px;
+        padding: auto;
+        margin:auto;
+        border : 15pt;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        background-color:blanchedalmond;
+            }
+    
+    .child-table{
+        width: 700px;
+        height:700px;
+        padding: auto;
+        margin:auto;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        
+        border : 15pt;
+        color:blue;
+        border-top-left-radius: 10;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color:azure;
+
+    }
+    .heading{
+        margin: auto;
+        padding: auto;
+        align-self: auto;
+    }
+    .emp-err{
+        color: red;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    </style>
+    
+    
+    
+    
+    <title>Registration Form</title>
+    <script type="text/javascript">
+        var flag_validate;
+        var totalMarks = 0;
+
+        function validateForm(){
+            flag_validate= true;
+            ValidateEmpID();
+            ValidateEmpName();
+            ValidateDomain();
+            ValidateModule();
+            ValidateMarks();           
+            if(flag_validate){
+                document.getElementById("err_marks").innerHTML="<h3>"+"Total marks are :"+totalMarks +"</h3>"
+                //alert("total marks are"+totalMarks);
+            }
+        }
+        
+        function clearerror(idvalue){
+                document.getElementById(idvalue).innerHTML="";
+        }
+
+
+        function showValues(){
+                var domain = document.getElementById("domain").value
+                if(domain =="J2EE" ){
+                    var module = document.getElementById("module");
+                    var len = module.length;
+                    for(var i = 1;i<len;i++){
+                        module.remove(1);
+                    }
+
+                    var opt = document.createElement("option");
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="Spring";
+                    opt.text="Spring";                    
+                    var mod = document.getElementById("module")
+                    mod.appendChild(opt);  
+
+                    var opt = document.createElement("option");
+                    
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="Core Java";
+                    opt.text="Core Java";
+                    var mod = document.getElementById("module")
+                    mod.appendChild(opt);
+
+                    var opt = document.createElement("option");
+                    
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="Servlet JSP";
+                    opt.text="Servlet JSP";
+                    var mod = document.getElementById("module")
+                    mod.appendChild(opt);
+                }else if(domain=".NET"){
+                    var module = document.getElementById("module");
+                    var len = module.length;
+                    for(var i = 1;i<len;i++){
+                        module.remove(1);
+                    }
+
+                    var opt = document.createElement("option");
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="C#";
+                    opt.text="c#";
+                    var modElemnt = document.getElementById("module");
+                    modElemnt.appendChild(opt);
+                    var opt = document.createElement("option");
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="ADO.NET";
+                    opt.text="ADO.NET";    
+                    modElemnt.appendChild(opt); 
+                    var opt = document.createElement("option");   
+                    opt.id="module1";
+                    opt.name="mod1";
+                    opt.value="ASP.NET";
+                    opt.text="ASP.NET";    
+                    modElemnt.appendChild(opt);                        
+                }                
+        }
+    function ValidateEmpID(){
+        var empid = document.getElementById("empid").value;
+        if(empid.length!=6){
+            document.getElementById("err_id").innerHTML="Emp id should be equal to 6 characters";
+           // window.alert("less than 6");
+            flag_validate=false;
+        }
+    }
+
+    function ValidateEmpName(){
+        var empName = document.getElementById("empName").value;
+        if(empName.length >30 || empName.length<3 ){
+            document.getElementById("err_name").innerHTML=" Emp Name cannnot be more than 30 and blank";
+            //window.alert("greater than 30");
+            flag_validate=false;
+        }
+    }
+
+    function ValidateMarks(){
+        var MTP_marks = Number(document.getElementById("mpt_marks").value);        
+        var mtt_marks = Number(document.getElementById("mtt_marks").value);
+        var marks = Number(document.getElementById("marks").value);
+        
+        if(MTP_marks>0 && mtt_marks >0 && marks >0 ){
+           // window.alert(MTP_marks+mtt_marks +marks);
+           totalMarks = (MTP_marks+mtt_marks +marks);
+        }else{
+            document.getElementById("err_marks").innerHTML=" Marks should be non negative numbers";
+           // window.alert("Not positive numbers");
+            flag_validate=false;
+        }
+    }
+
+    function ValidateDomain(){
+        var domain = document.getElementById("domain").value
+        if(domain=="default"){
+            //alert(domain);
+            document.getElementById("err_domain").innerHTML=" domain is blank";
+            flag_validate=false;
+        }        
+    }
+
+    function ValidateModule(){
+        var module = document.getElementById("module").value
+        if(module =="default"){
+            document.getElementById("err_module").innerHTML=" module is blank";
+            flag_validate=false;
+        }
+    }
+
+    </script>
+    
+    
+</head>
+<body > 
+    <table  class="main-table"> 
+            
+    
+                <tr>
+                    <td>
+                            
+                    </td>
+                    <td >                        
+                            <form name="frmRegistration" id ="frmR"  method="GET">
+                                <table class="child-table">
+                                       <tr >
+                                            <th colspan="2"> <div class="heading"><h2>Registration Form</h2></div></th>
+                                       </tr>
+                                       <tr>
+                                            
+                                           <td>
+                                                 
+                                                <label>Enter Employee Number</label> <br>
+                                                <p id="p_id" ></p> 
+                                           </td>
+                                           <td>
+                                                <input type= "text" id="empid" name="empid" onfocus="clearerror('err_id')">
+                                                 
+                                                <br>      
+                                           </td>
+                                           <td>
+                                                <p id ="err_id" name="err_empid" class="emp-err"></p>
+                                            </td>
+                                       </tr> 
+                                       <tr>
+                                           <td>
+                                                <label>Enter Employee Name</label> <br>
+                                                <p id="p_name"></p>
+                                           </td>
+                                           <td>
+                                                <input type= "text" id="empName" name="empName" onfocus="clearerror('err_name')"/>
+                                                <br>
+                                           </td>
+                                           <td>
+                                               <p id ="err_name" name="err_empname" class="emp-err"></p>
+                                           </td>
+                                        </tr> 
+                                        <tr>
+                                            <td> <label>Choose Domain</label> </td>
+                                            <td><Select id="domain" onChange="showValues()" onfocus="clearerror('err_domain')">
+                                                    <option id="default" value="default">Select ---Domain--</option>
+                                                    <option id="domain1" value="J2EE">J2EE</option>
+                                                    <option id="domain12" value=".NET">.NET</option>
+                                                 </Select>
+                                                 <br></td>
+                                                 <td>
+                                                        <p id ="err_domain" name="err_emp_domane" class="emp-err"></p>
+                                                    </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Choose Module</label>   </td>
+                                            <td><Select id="module" onfocus="clearerror('err_module')" >
+                                                    <option id="module1" name="mod1" value="default">SELECT---Module---</option>
+                                                    
+                                                 </Select></td>
+
+                                                 <td>
+                                                        <p id ="err_module" name="err_emp_module" class="emp-err"></p>
+                                                    </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                    <label>Enter MTP Marks </label>   
+                                            </td>
+                                            <td>
+                                                    <input type= "text" id="mpt_marks" name="mpt"onfocus="clearerror('err_marks')" >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Enter MTT Marks </label>   </td>
+                                            <td><input type= "text" id="mtt_marks" name="mtt" onfocus="clearerror('err_marks')" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Enter Assignment Marks </label>   
+                                                </td>
+                                                <td><input type= "text" id="marks" name="marks" onfocus="clearerror('err_marks')"></td>
+                                        </tr>
+                                        <tr>
+                                                <td></td>
+                                            <td><input type="button" id="calculate_Score" value = "Calculate Module Score" name="cal_score" onclick="validateForm()" ></td>
+
+                                            <td>
+                                                    <p id ="err_marks" name="err_emp_marks" class="emp-err"></p>
+                                                </td>
+                                                
+                                        </tr>
+
+                                </table>                                                                  
+                             
+                            </form>
+                    </td>
+                    <td>
+
+                    </td>
+                        
+        
+                </tr>
+
+
+    
+    
+        
+
+
+    </table>
+</body>
+</html>

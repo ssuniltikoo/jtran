@@ -1,0 +1,35 @@
+
+<html>
+    <head>
+        <title>ArrayDemo
+
+        </title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var arr = new Array("sunil","Amit","Rohit");
+            document.write("In Grouple total participants are "+ arr.length+"<br>"+" Name of Participants are "+ arr.join(" ******* ") +"<br>");
+
+            var arrSlice = arr.slice(0,2);
+            document.write(arrSlice);
+            var newUpdated_arr = arr.concat(" hello ");
+            document.write("<br>"+ newUpdated_arr);
+            document.write(typeof(6)+"<br>");
+            //newUpdated_arr.forEach
+
+            var a = "suniltikoo";
+            
+            document.write(a.slice(5));
+               document.write("<br>"); 
+            var temp = new Array("sa","re","ga","ma","pa","da","ne","sa");
+            document.write(temp.slice(5));
+            document.write("<br>"); 
+            document.write(temp.slice(-5));
+            document.write("<br>"+"****************"+"<br>"); 
+            document.write(temp.reverse());
+            var temp = 5;
+            console.log(temp.toString);
+        </script>
+
+    </body>
+</html>

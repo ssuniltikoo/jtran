@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Jquery - Demo
+
+    </title>
+</head>
+
+<body>
+    <script src="scripts/jquery-1.4.4.min.js" type="text/javascript">
+
+    </script>
+
+</body>
+
+<input type="button" id="jq1"  value="please click me" />
+<p id="idp1">Hello from paragraph 1</p>
+<p class="idp2">hello from paragraph 2</p>
+
+<script type="text/javascript">
+    //jquery object to be used to manupale dom
+    $(document).ready(function () {
+        $("input").click(function(){
+            $(".idp2").hide();
+        });
+    }
+    );
+</script>
+
+</html>
