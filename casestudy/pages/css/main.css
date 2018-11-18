@@ -1,0 +1,52 @@
+body{
+    background-color:white;
+    background-image: image("images/test.jpeg")
+}
+
+.navheader{
+    align-self: center;    
+    width: 150px;
+    color: blue;
+    background-color: yellow;    
+    padding: 20px;
+    border-radius: 1pt;
+    text-align: center;
+    
+    
+}
+
+footer{
+    background-color: grey;
+    text-align: center;
+}
+header{
+    text-align: center;
+    background-color: darkgray;
+    height: auto;
+    font-size: 20pt;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15pt;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+
+
+a{
+    text-decoration: none;
+    
+    display:inline-block;
+
+}
+.verticalnav{
+    
+    font-size: auto;
+    padding: 2pt;
+    margin-left: 10pt;
+    margin-bottom: 10pt;
+    margin-top: 10pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    
+}
+
+

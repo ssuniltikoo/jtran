@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>JP Morgan Demo</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+                
+            </head>
+4
+
+
+
+
+    <body>
+        <Strong> Registration Form</Strong>
+        <form id="userfrm" name="regfrm" method="Post" action="success.html">
+        <table border = "3" class="userform">
+            <tr>
+                <td>Name</td>
+                <td><input type="text"  value="" placeholder="username" required></td>
+                <td><div class="mandatory">*</div></td>
+            </tr>
+            <tr>
+                    <td>Address</td>
+                    <td><input type="text"  value="" placeholder="user address" /></td>
+                    <td></td>
+            </tr>    
+
+            <tr>
+                    <td>Zip Code</td>
+                    <td><input type="number"  minlength="6" maxlength="8" pattern="[0-9]" name="phnum" value="" required></td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+            <tr>
+                    <td>Country</td>
+                    <td><select id="country"  name="countries" required>
+                            <option id="country_default" value="default">--select country--</option>
+                        <option id="1" value="usa">USA</option>
+                        <option id="2" value="india">India</option>
+                        <option id="3" value="UK">UK</option>
+                        <option id="4" value="Newzealand">New Zealand</option>
+                        <option id="5" value="Australia">Australia</option>
+
+                    </select>
+
+
+
+                    </td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+            <tr>
+                    <td>Gender</td>
+                    <td>Male<input type="radio" value="male" name="gender" checked/>
+                        Female<input type="radio" value="female" name="gender"/>
+                    </td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+            <tr>
+                    <td>Preference</td>
+                    <td>Ruby<input type="checkbox" value="ruby" name="preference">
+                        Groovy<input type="checkbox" value="groovy" name="preference"> 
+                        Bluetooth<input type="checkbox" value="Bluetooth" name="preference"> 
+
+
+                    </td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+            <tr>
+                    <td>Phone</td>
+                    <td><input type="text"  minlength="10" maxlength="10" name="num" pattern="[0-9]{10}" required></td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+            <tr>
+                    <td>Email</td>
+                    <td><input type="email" required>
+
+                    </td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+
+            <tr>
+                    <td>Password(6-8 characters)</td>
+                    <td>
+                        <input type="text" minlength="6" maxlength="8" required id="pwd">
+                    </td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+            <tr>
+                    <td>verify Password/td>
+                    <td><input type="text" minlength="6" maxlength="8" required id="vpwd"></td>
+                    <td><div class="mandatory">*</div></td>
+            </tr>
+
+            <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value ="send" name="send" onclick="ValidateFields()">
+                        <input type="button" value ="clear" name="clear" onclick="clearAllFields()">
+
+                    </td>
+                    <td></td>
+            </tr>
+
+           
+            
+        </table>
+    </form>
+
+    <script type="text/javascript">
+
+        function clearAllFields(){
+                var allElements  = document.getElementsByTagName("input");
+    
+                
+                for(var i = 0 ; i<allElements.length;i++){
+                        document.getElementById(idvalue).innerHTML="";
+                        
+                }
+        }
+
+      
+
+        </script>
+
+    </body>
+</html>
